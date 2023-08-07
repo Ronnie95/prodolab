@@ -5,30 +5,31 @@ const TaskSchema = new mongoose.Schema({
 
     taskName: {
         type: String,
-        require: true,
+        required:[true, "It has to be something"]
         
 
     },
 
     description: {
         type: String,
-        require: true,
+        required: [true, "It has to be something"]
     },
 
     dueDate: {
-        due: Date,
-        require: true,
+        type: String,
+        required: [true, "It has to be something"]
     },
 
 
     priority: {
         type: String,
-        require: true,
+        required: [true, "It has to be something"]
     },
 
     status: {
         complete: Boolean,
-        require: true,
+        
+        
     },
 
 })

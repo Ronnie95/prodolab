@@ -1,14 +1,22 @@
-
+require('dotenv').config();
 const express = require('express');
-	
-
 const app = express();
-
-PORT = 4000;
+const userController = require('./controllers/user');
+const taskController = require('./controllers/task');
+const cors = require('cors');
+const morgan = require('morgan')
+const PORT = process.env.PORT || 4000;
 	
+app.use(cors());
+app.use(express.json());
+app.use(morgan("dev"));
+
+
+app.use('/user', userController);
+app.use('/task', taskController);
 
 app.get('/', function(req, res) {
-    res.send('<h1>Hello World!</h1>');
+    res.json('Hello World!');
   });
   
 
