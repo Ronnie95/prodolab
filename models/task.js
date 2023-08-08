@@ -28,8 +28,6 @@ const TaskSchema = new mongoose.Schema({
 
     status: {
         complete: Boolean,
-        
-        
     },
 
 })
