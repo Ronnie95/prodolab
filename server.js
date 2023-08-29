@@ -16,7 +16,7 @@ app.use(morgan("dev"));
 
 app.use('/user', userController);
 app.use('/task', taskController);
-app.use('/note', notesController);
+app.use('/notes', notesController);
 app.use('/project', projectController)
 
 app.get('/', function(req, res) {
