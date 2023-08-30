@@ -16,7 +16,8 @@ const TaskSchema = new mongoose.Schema({
     },
 
     dueDate: {
-        type: String,
+        type: Date,
+        default: Date.now,
         required: [true, "It has to be something"]
     },
 
@@ -29,6 +30,13 @@ const TaskSchema = new mongoose.Schema({
     status: {
         complete: Boolean,
     },
+    
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
+
 
 })
 
